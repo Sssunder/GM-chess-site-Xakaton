@@ -12,10 +12,8 @@
 <header>
     <h1 onclick="showContent('welcome')">GM♟️</h1>
     <nav>
-        <a onclick="showContent('knowledgeBase')">Обучение</a>
-        <a onclick="showContent('tests')">Тесты</a>
-        <a onclick="showContent('about')">О нас</a>
-        <a onclick="showContent('contacts')">Контакты</a>
+        <a onclick="showContent('knowledgeBase')">Образовательные ресурсы</a>
+        <a onclick="showContent('tests')">Тестирование</a>
         <a href="register.html" class="button">Регистрация</a>
         <a href="login.html" class="button">Авторизация</a>
     </nav>
@@ -25,6 +23,30 @@
     <h2>Добро пожаловать!</h2>
     <p>Этот портал создан для выявления и поддержки талантливых детей в шахматах. Здесь вы можете пройти тесты, узнать больше о шахматах и найти единомышленников.</p>
     <p>Мы верим, что шахматы помогают развивать логическое мышление, терпение и стратегические навыки. Присоединяйтесь к нашему сообществу, участвуйте в мероприятиях и развивайте свои способности!</p>
+    <h2>О нас</h2>
+    <p>Мы — команда профессиональных шахматистов и педагогов, которые стремятся поддерживать и развивать таланты детей в шахматах.</p>
+    <p>Наша цель — создать безопасную и вдохновляющую среду для обучения и игры. Мы проводим мастер-классы, тренировки и турниры, чтобы каждый мог найти свое место в мире шахмат!</p>
+
+    <div class="news-container">
+    <div class="news-item">
+    <h3>Гениально!</h3>
+    <p>Невероятная игра Иванова И.И</p>
+    </div>
+    <div class="news-item">
+    <h3>Новая стратегия, или хорошо забытая старая?</h3>
+    <p>Мир не видел ранее таких стратегий</p>
+    </div>
+    <div class="news-item">
+    <h3>Пешка и почему она не ходит пешком</h3>
+    <p>Мировая тайна</p>
+    </div>
+    </div>
+    <button class = "btnPlay" onclick="showContent('welcome2')">Играть</button>
+</div>
+
+<div id = "welcome2" class = "content">
+    <h2>Проверьте свои навыки, проходя тестирование, или примите участие в турнире!</h2>
+    <button class = "btnPlay" onclick="showContent('tests')">Тестирование</button> <button class = "btnPlay">Турниры</button> <button class = "btnPlay">Вернуться</button>
 </div>
 
 <div id = "knowledgeBase" class = "content">
@@ -82,8 +104,6 @@
     <a class = "button" onclick = "showContent('knowledgeBase')">Назад</a>
 </div>
 
-<div id = > </div>
-
 <div id = "tests" class = "content">
     <h2>Тесты</h2>
     <p>Проходите наши тесты, чтобы оценить свои навыки и получить советы по улучшению игры.</p>
@@ -96,14 +116,8 @@
     <p>Наша цель — создать безопасную и вдохновляющую среду для обучения и игры. Мы проводим мастер-классы, тренировки и турниры, чтобы каждый мог найти свое место в мире шахмат!</p>
 </div>
 
-<div id = "contacts" class = "content">
-    <h2>Контакты</h2>
-    <p>Вы можете связаться с нами по электронной почте: <a href="mailto:info@chessportal.ru">info@chessportal.ru</a></p>
-    <p>Мы открыты для ваших предложений и вопросов. Не стесняйтесь писать нам, если у вас есть идеи для улучшения нашего портала или если вы хотите узнать больше о наших мероприятиях!</p>
-</div>
-
 <footer>
-    <p>&copy; 2024 GM, </p>
+    <p>&copy; 2024 GM, Вы можете связаться с нами по электронной почте: <a href="mailto:info@chessportal.ru">info@chessportal.ru</p>
 </footer>
 
 <script src = "script.js"> </script> <!-- Подключение внешнего JS файла -->
