@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang = "ru">
-<head>
-    <meta charset = "UTF-8">
-    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-    <title>GM</title>
-    <link href = "https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel = "stylesheet"> <!-- Подключение шрифта Roboto -->
-    <link rel = "stylesheet" href = "styles.css"> <!-- Подключение внешнего CSS файла -->
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>GM</title>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        
+        <!-- Подключение jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <!-- Подключение Chessboard.js и Chess.js -->
+        <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.css">
+        <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+        <script src="https://github.com/lichess-org/stockfish.js"></script>
+    </head>
 <body>
 
 <header>
@@ -27,27 +35,26 @@
     <p>Мы — команда профессиональных шахматистов и педагогов, которые стремятся поддерживать и развивать таланты детей в шахматах.</p>
     <p>Наша цель — создать безопасную и вдохновляющую среду для обучения и игры. Мы проводим мастер-классы, тренировки и турниры, чтобы каждый мог найти свое место в мире шахмат!</p>
 
-    <button class = "btnStart" onclick="showContent('welcome2')">Играть</button>
-
     <div class="news-container">
-        <div class="news-item">
-        <h3>Гениально!</h3>
-        <p>Невероятная игра Иванова И.И</p>
-        </div>
-        <div class="news-item">
-        <h3>Новая стратегия, или хорошо забытая старая?</h3>
-        <p>Мир не видел ранее таких стратегий</p>
-        </div>
-        <div class="news-item">
-        <h3>Пешка и почему она не ходит пешком</h3>
-        <p>Мировая тайна</p>
-        </div>
-        </div>
+    <div class="news-item">
+    <h3>Гениально!</h3>
+    <p>Невероятная игра Иванова И.И</p>
+    </div>
+    <div class="news-item">
+    <h3>Новая стратегия, или хорошо забытая старая?</h3>
+    <p>Мир не видел ранее таких стратегий</p>
+    </div>
+    <div class="news-item">
+    <h3>Пешка и почему она не ходит пешком</h3>
+    <p>Мировая тайна</p>
+    </div>
+    </div>
+    <button class = "btnPlay" onclick="showContent('welcome2')">Играть</button>
 </div>
 
 <div id = "welcome2" class = "content">
     <h2>Проверьте свои навыки, проходя тестирование, или примите участие в турнире!</h2>
-    <button class = "btnTest" onclick="showContent('tests')">Тестирование</button> <button class = "btnPlay">Турниры</button> <button class = "btnBack" onclick="showContent('welcome')">Вернуться</button>
+    <button class = "btnPlay" onclick="showContent('tests')">Тестирование</button> <button class = "btnPlay">Турниры</button> <button class = "btnPlay">Вернуться</button>
 </div>
 
 <div id = "knowledgeBase" class = "content">
@@ -106,7 +113,12 @@
 </div>
 
 <div id = "tests" class = "content">
-    <h2>Тестирование</h2>
+    <div id="board" style="width: 400px"></div>
+    <button class="btnPlay" onclick="startGame()">Играть с Stockfish</button>
+    <div id="status"></div>
+    <div id="fen"></div>
+    <div id="pgn"></div>
+    <h2>Тесты</h2>
     <p>Проходите наши тесты, чтобы оценить свои навыки и получить советы по улучшению игры.</p>
     <p>Тесты покрывают различные аспекты шахмат: от основ до продвинутых стратегий. Каждый тест поможет вам узнать свои сильные и слабые стороны.</p>
 </div>
@@ -120,7 +132,7 @@
 <footer>
     <p>&copy; 2024 GM, Вы можете связаться с нами по электронной почте: <a href="mailto:info@chessportal.ru">info@chessportal.ru</p>
 </footer>
-
+<script src="scr\stockfish.js"></script>
 <script src = "script.js"> </script> <!-- Подключение внешнего JS файла -->
 </body>
 </html>

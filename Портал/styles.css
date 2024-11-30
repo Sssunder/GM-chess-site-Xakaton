@@ -136,8 +136,7 @@ footer {
     
 }
 .btnPlay {
-    background-image: url('icons/tournament.jpg');
-    background-size: cover; 
+    background-image: url('icons/Chess.png'); 
     text-align: top;
     margin-left: 10px; 
     padding: 8px 12px;
@@ -145,11 +144,11 @@ footer {
     border: none;
     border-radius: 10px;
     color: white;
-    cursor: pointer;  
+    cursor: pointer;
+    text-decoration: none;
     transition: background-color 0.3s ease, transform 0.1s ease;
-    height: 400px;
-    width: 400px;
-    font-size: 40px;
+    height: 600px;
+    width: 600px;
     
 }
 
@@ -162,88 +161,10 @@ footer {
     transform: scale(0.95); 
 }
 
-.btnTest {
-    background-image: url('icons/test.jpg');
-    background-size: cover; 
-    text-align: top;
-    margin-left: 10px; 
-    padding: 8px 12px;
-    background-color: #555; 
-    border: none;
-    border-radius: 10px;
-    color: white;
-    cursor: pointer;  
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    height: 400px;
-    width: 400px;
-    font-size: 40px;
-}
-
-.btnTest:hover {
-    background-color: #777; 
-}
-
-.btnTest:active {
-    background-color: #333; 
-    transform: scale(0.95); 
-}
-
-.btnBack {
-    background-image: url('icons/back.jpg');
-    background-size: cover; 
-    text-align: top;
-    margin-left: 10px; 
-    padding: 8px 12px;
-    background-color: #555; 
-    border: none;
-    border-radius: 10px;
-    color: white;
-    cursor: pointer;  
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    height: 400px;
-    width: 400px;
-    font-size: 40px;
-}
-
-.btnBack:hover {
-    background-color: #777; 
-}
-
-.btnBack:active {
-    background-color: #333; 
-    transform: scale(0.95); 
-}
-
-.btnStart {
-    background-image: url('icons/start.jpg');
-    background-size: cover; 
-    text-align: top;
-    margin-left: 10px; 
-    padding: 8px 12px;
-    background-color: #555; 
-    border: none;
-    border-radius: 10px;
-    color: white;
-    cursor: pointer;  
-    transition: background-color 0.3s ease, transform 0.1s ease;
-    height: 400px;
-    width: 400px;
-    font-size: 40px;
-}
-
-.btnStart:hover {
-    background-color: #777; 
-}
-
-.btnStart:active {
-    background-color: #333; 
-    transform: scale(0.95); 
-}
-
 .news-container {
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 .news-item {
@@ -263,3 +184,17 @@ footer {
         margin-left: 5px;
     }
 }
+
+#board {
+    width: 400px;
+    margin: 20px auto;
+}
+
+.highlight {
+    background: yellow;
+}
+
+.square-55d63 {
+    background: #eee;
+}
+
