@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0000; /* Общий фон черный */
+    padding-top: 70px; /* Отступ сверху, чтобы избежать перекрытия контента заголовком */
+    background-image: url('icons/output.png'); /* Задний фон с изображением */
+    background-size: cover; /* Масштабирование изображения на весь фон */
+    background-position: center; /* Центрирование изображения */
+    height: 100vh; /* Высота на весь экран */
+    position: relative; /* Позиционирование для вставки псевдоэлемента */
+    z-index: -1; /* Отправка на задний план */
+    overflow-x: hidden; /* Скрывает скроллбар */
+}
+
+/* Создание псевдоэлемента для фактического фона */
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('icons/output.png'); /* Задний фон с изображением */
+    background-size: cover; /* Масштабирование изображения на весь фон */
+    background-position: center; /* Центрирование изображения */
+    filter: blur(8px); /* Применение размытия */
+    z-index: -1; /* Позволяет элементу быть под контентом */
+}
+
+header {
+    background: rgba(51, 51, 51, 1); 
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; /* Закрепляет заголовок в верхней части окна */
+    top: 0; /* Привязывает заголовок к верхней части окна */
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Устанавливает уровень слоя, чтобы заголовок был поверх других элементов */
+    transition: top 0.2s; /* Плавный переход для скручивания */
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif; /* Применение шрифта Roboto для названия */
+    cursor: pointer;
+    margin: 0; /* Убирает отступы для заголовка */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Позволяет кнопкам переноситься на новую строку */
+}
+
+nav a {
+    color: white;
+    margin: 0 10px; /* Уменьшил отступы для улучшения адаптивности */
+    text-decoration: none;
+    cursor: pointer;
+    padding: 10px 15px; /* Добавил отступы для расширения области */
+    border-radius: 20px; /* Овальная форма */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Плавный переход для фона и цвета */
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Подсветка при наведении */
+    color: #f0f0f0; /* Слегка светлее при наведении */
+}
+
+nav a:active {
+    background-color: #333; /* Темнеет при нажатии */
+    border-radius: 20px; /* Убедитесь, что радиус остается, если вы хотите сохранить овальную форму */
+    transform: scale(0.95);
+}
+
+.button {
+    margin-left: 10px; /* Уменьшил отступы для улучшения адаптивности */
+    padding: 8px 12px;
+    background-color: #555; /* Цвет кнопки немного светлее для контраста */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.1s ease; /* Плавный переход для фона */
+}
+
+.button:hover {
+    background-color: #777; /* Подсветка кнопки при наведении */
+}
+
+.button:active {
+    background-color: #333; /* Темнеет кнопка при нажатии */
+    transform: scale(0.95); /* Немного уменьшает кнопку при нажатии */
+}
+
+.content {
+    padding: 20px;
+    background: rgba(244, 244, 244, 0.8);
+    margin: 15px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    transition: opacity 0.5s ease, transform 0.5s ease-in;
+    text-align: left;
+    padding-bottom: 100px;
+    opacity: 0; /* Изначально невидимый */
+    transform: translateX(-100%); /* Сдвинут влево */
+}
+
+.active {
+    display: block;
+    opacity: 1; /* Полностью видимый */
+    transform: translateX(0%); /* Вернуться на место */
+}
+
+.fade-out {
+    opacity: 0; /* Исчезает */
+    transform: translateX(100%); /* Уезжает вправо */
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: rgba(51, 51, 51, 1); /* Полупрозрачный цвет для подвала */
+    color: white;
+    position: fixed; /* Закрепляет подвал внизу страницы */
+    bottom: -80px; /* Скрывает футер за пределами видимости */
+    left: 0;
+    right: 0;
+    width: 100%;
+    transition: bottom 0.2s; /* Плавный переход для футера */
+    
+}
+
+/* Медиазапрос для уменьшения ширины экрана */
+@media (max-width: 600px) {
+    nav a {
+        margin: 0 5px; /* Уменьшение отступов для мобильных устройств */
+    }
+    .button {
+        margin-left: 5px; /* Отступ для кнопок */
+    }
+}
