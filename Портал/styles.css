@@ -2,15 +2,15 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #0000; /* Общий фон черный */
-    padding-top: 70px; /* Отступ сверху, чтобы избежать перекрытия контента заголовком */
-    background-image: url('icons/output.png'); /* Задний фон с изображением */
-    background-size: cover; /* Масштабирование изображения на весь фон */
-    background-position: center; /* Центрирование изображения */
-    height: 100vh; /* Высота на весь экран */
-    position: relative; /* Позиционирование для вставки псевдоэлемента */
-    z-index: -1; /* Отправка на задний план */
-    overflow-x: hidden; /* Скрывает скроллбар */
+    background-color: #0000; 
+    padding-top: 70px;
+    background-image: url('icons/output.png'); 
+    background-size: cover; 
+    background-position: center; 
+    height: 100vh; 
+    position: relative; 
+    z-index: -1; 
+    overflow-x: hidden; 
 }
 
 /* Создание псевдоэлемента для фактического фона */
@@ -21,11 +21,11 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('icons/output.png'); /* Задний фон с изображением */
-    background-size: cover; /* Масштабирование изображения на весь фон */
-    background-position: center; /* Центрирование изображения */
-    filter: blur(8px); /* Применение размытия */
-    z-index: -1; /* Позволяет элементу быть под контентом */
+    background-image: url('icons/output.png');
+    background-size: cover; 
+    background-position: center; 
+    filter: blur(8px); 
+    z-index: -1; 
 }
 
 header {
@@ -35,66 +35,66 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed; /* Закрепляет заголовок в верхней части окна */
-    top: 0; /* Привязывает заголовок к верхней части окна */
+    position: fixed; 
+    top: 0; 
     left: 0;
     right: 0;
-    z-index: 1000; /* Устанавливает уровень слоя, чтобы заголовок был поверх других элементов */
-    transition: top 0.2s; /* Плавный переход для скручивания */
+    z-index: 1000; 
+    transition: top 0.2s; 
 }
 
 h1 {
-    font-family: 'Roboto', sans-serif; /* Применение шрифта Roboto для названия */
+    font-family: 'Roboto', sans-serif; 
     cursor: pointer;
-    margin: 0; /* Убирает отступы для заголовка */
+    margin: 0;
 }
 
 nav {
     display: flex;
     align-items: center;
-    flex-wrap: wrap; /* Позволяет кнопкам переноситься на новую строку */
+    flex-wrap: wrap; 
 }
 
 nav a {
     color: white;
-    margin: 0 10px; /* Уменьшил отступы для улучшения адаптивности */
+    margin: 0 10px; 
     text-decoration: none;
     cursor: pointer;
-    padding: 10px 15px; /* Добавил отступы для расширения области */
-    border-radius: 20px; /* Овальная форма */
-    transition: background-color 0.3s ease, color 0.3s ease; /* Плавный переход для фона и цвета */
+    padding: 10px 15px; 
+    border-radius: 20px; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
 }
 
 nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Подсветка при наведении */
-    color: #f0f0f0; /* Слегка светлее при наведении */
+    background-color: rgba(255, 255, 255, 0.2); 
+    color: #f0f0f0; 
 }
 
 nav a:active {
-    background-color: #333; /* Темнеет при нажатии */
-    border-radius: 20px; /* Убедитесь, что радиус остается, если вы хотите сохранить овальную форму */
+    background-color: #333; 
+    border-radius: 20px; 
     transform: scale(0.95);
 }
 
 .button {
-    margin-left: 10px; /* Уменьшил отступы для улучшения адаптивности */
+    margin-left: 10px; 
     padding: 8px 12px;
-    background-color: #555; /* Цвет кнопки немного светлее для контраста */
+    background-color: #555; 
     border: none;
     border-radius: 5px;
     color: white;
     cursor: pointer;
     text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.1s ease; /* Плавный переход для фона */
+    transition: background-color 0.3s ease, transform 0.1s ease; 
 }
 
 .button:hover {
-    background-color: #777; /* Подсветка кнопки при наведении */
+    background-color: #777; 
 }
 
 .button:active {
-    background-color: #333; /* Темнеет кнопка при нажатии */
-    transform: scale(0.95); /* Немного уменьшает кнопку при нажатии */
+    background-color: #333; 
+    transform: scale(0.95); 
 }
 
 .content {
@@ -107,41 +107,80 @@ nav a:active {
     transition: opacity 0.5s ease, transform 0.5s ease-in;
     text-align: left;
     padding-bottom: 100px;
-    opacity: 0; /* Изначально невидимый */
-    transform: translateX(-100%); /* Сдвинут влево */
+    opacity: 0; 
+    transform: translateX(-100%); 
 }
 
 .active {
     display: block;
-    opacity: 1; /* Полностью видимый */
-    transform: translateX(0%); /* Вернуться на место */
+    opacity: 1;
+    transform: translateX(0%); 
 }
 
 .fade-out {
-    opacity: 0; /* Исчезает */
-    transform: translateX(100%); /* Уезжает вправо */
+    opacity: 0; 
+    transform: translateX(100%); 
 }
 
 footer {
     text-align: center;
     padding: 15px;
-    background: rgba(51, 51, 51, 1); /* Полупрозрачный цвет для подвала */
+    background: rgba(51, 51, 51, 1); 
     color: white;
-    position: fixed; /* Закрепляет подвал внизу страницы */
-    bottom: -80px; /* Скрывает футер за пределами видимости */
+    position: fixed; 
+    bottom: -80px; 
     left: 0;
     right: 0;
     width: 100%;
-    transition: bottom 0.2s; /* Плавный переход для футера */
+    transition: bottom 0.2s; 
+    
+}
+.btnPlay {
+    background-image: url('icons/Chess.png'); 
+    text-align: top;
+    margin-left: 10px; 
+    padding: 8px 12px;
+    background-color: #555; 
+    border: none;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    height: 600px;
+    width: 600px;
     
 }
 
-/* Медиазапрос для уменьшения ширины экрана */
+.btnPlay:hover {
+    background-color: #777; 
+}
+
+.btnPlay:active {
+    background-color: #333; 
+    transform: scale(0.95); 
+}
+
+.news-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.news-item {
+    width: 30%;
+    padding: 10px;
+    background-color: #F0F0F0;
+    margin: 5px;
+    text-align: center;
+    border-radius: 5px;
+}
+
 @media (max-width: 600px) {
     nav a {
-        margin: 0 5px; /* Уменьшение отступов для мобильных устройств */
+        margin: 0 5px; 
     }
     .button {
-        margin-left: 5px; /* Отступ для кнопок */
+        margin-left: 5px;
     }
 }
